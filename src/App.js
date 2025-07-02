@@ -23,8 +23,6 @@ function App() {
 
   const animal01 = 'img/bear.png';
   const animal02 = 'img/elephant.png';
-  const animal03 = 'img/fox.png';
-  const animal04 = 'img/rabbit.png';
 
   const [mainAnimal, setMainAnimal] = React.useState(animal01);
   const [favorites, setFavorites]
@@ -66,7 +64,7 @@ function App() {
 
   return (
     <div>
-      <PageTitle>😍{count} 페이지😍</PageTitle>
+      <PageTitle>🧐🤓{count} 페이지🧐🤓</PageTitle>
       <AnimalForm updateMainAnimal={updateMainAnimal} />
       <MainCard
         src={mainAnimal}
