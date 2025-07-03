@@ -3,50 +3,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-body {
-  text-align: center;
-}
-
-form {
-  margin-bottom: 20px;
-}
-
-.main-card .main-image {
-  width: 400px;
-  height: 400px;
-  object-fit: cover;
-}
-
-
-
-.main-card button {
-  position: relative;
-  left: -45px;
-  top: -13px;
-}
-
-.favorites {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.favorites li {
-  list-style: none;
-}
-
-.favorites li img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-}
