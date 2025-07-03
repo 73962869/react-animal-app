@@ -23,7 +23,7 @@ const jsonLocalStorage = {
 const fetchCat = async (text) => {
   console.log('fetchCat() 함수 실행');
 
-  const response = await fetch(`${OPEN_API_DOMAIN}/cat/says/${text}?json=true`);
+  const response = await fetch(`${OPEN_API_DOMAIN}/cat/says/${text}?width=400&height=400&json=true`);
   const responseJson = await response.json();
 
   return responseJson.url;
@@ -54,13 +54,16 @@ function App() {
     });
   }
 
-  async function updateMainAnimal() {
-    const newCat = await fetchCat('hahaha~');
+  async function updateMainAnimal(userInput) {
+    const newCat = await fetchCat(userInput);
     setMainAnimal(newCat);
-
     incrementCount();
+  
+    // 🔥 주소창에 ?cat=xxx 추가
+    const nextUrl = `?cat=${encodeURIComponent(userInput)}`;
+    window.history.pushState({}, '', nextUrl);
   }
-
+  
   function handleHeartClick() {
     console.log('하트 버튼 클릭');
     setFavorites((pre) => {
@@ -73,7 +76,7 @@ function App() {
 
   return (
     <div>
-      <PageTitle>🌱🌱 {count} 페이지 🌱🌱</PageTitle>
+      <PageTitle>🐱‍👤🐱‍💻 {count} 페이지 🐱‍👤🐱‍💻</PageTitle>
       <AnimalForm updateMainAnimal={updateMainAnimal} />
       <MainCard
         src={mainAnimal}
