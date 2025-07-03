@@ -1,11 +1,10 @@
-// src/components/AnimalForm.js
-import React from 'react';
+import React from "react";
 
 const AnimalForm = ({ updateMainAnimal }) => {
   const [value, setValue] = React.useState('');
   const [errorMessage, setErrorMessage] = React.useState('');
 
-  const hangul = (text) => /[ㄱ-ㅎ| ㅏ-ㅣ|가-힣]/.test(text);
+  const hangul = (text) => /[ㄱ-ㅎㅏ-ㅣ가-힣]/.test(text);
 
   function handleInputChange(data) {
     const userValue = data.target.value;
@@ -25,6 +24,7 @@ const AnimalForm = ({ updateMainAnimal }) => {
       setErrorMessage('빈 값은 추가할 수 없습니다.');
       return;
     }
+
     setErrorMessage('');
     updateMainAnimal();
   }
@@ -43,6 +43,6 @@ const AnimalForm = ({ updateMainAnimal }) => {
       <p style={{ color: "#f00" }}>{errorMessage}</p>
     </form>
   );
-};
+}
 
 export default AnimalForm;

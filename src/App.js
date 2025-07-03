@@ -5,13 +5,12 @@ import AnimalForm from './components/AnimalForm';
 import MainCard from './components/MainCard';
 import Favorites from './components/Favorites';
 
+
 const OPEN_API_DOMAIN = 'https://cataas.com';
 
 const jsonLocalStorage = {
   setItem: (key, value) => {
     console.log('localStorage.setItem() 실행');
-
-
     localStorage.setItem(key, JSON.stringify(value));
   },
   getItem: (key) => {
@@ -20,29 +19,25 @@ const jsonLocalStorage = {
   },
 };
 
-// Open API
+// Open API ////////////////////////////////////////////
 const fetchCat = async (text) => {
-  console.log('fetchCat 함수 실행');
+  console.log('fetchCat() 함수 실행');
 
-
-  const response = await fetch(`${OPEN_API_DOMAIN}/cat/says/:${text}?json=true`);
+  const response = await fetch(`${OPEN_API_DOMAIN}/cat/says/${text}?json=true`);
   const responseJson = await response.json();
-  
+
   return responseJson.url;
 };
 
 
-
 function App() {
-  console.log('**App 실행**');
+  console.log('** App 실행 **');
 
   const [mainAnimal, setMainAnimal] = React.useState(`${OPEN_API_DOMAIN}/cat`);
-  const [favorites, setFavorites]
-    = React.useState(() => {
-      console.log('favorites useState() 실행됨!');
-      return jsonLocalStorage.getItem('favorites') || [];
-    });
-
+  const [favorites, setFavorites] = React.useState(() => {
+    console.log('favorites useState() 실행됨!');
+    return jsonLocalStorage.getItem('favorites') || [];
+  });
 
   const [count, setCount] = React.useState(() => {
     console.log('count useState() 실행됨!');
@@ -60,7 +55,7 @@ function App() {
   }
 
   async function updateMainAnimal() {
-    const newCat = await fetchCat('hohohoh');
+    const newCat = await fetchCat('hahaha~');
     setMainAnimal(newCat);
 
     incrementCount();
@@ -76,18 +71,9 @@ function App() {
 
   }
 
-  // React.useEffect(() => {
-  //   console.log('앱 최초 실행 시 랜덤 고양이 호출');
-  //   fetchCat().then((url) => {
-  //     setMainAnimal(url);
-  //   });
-  // }, []);
-
-
-
   return (
     <div>
-      <PageTitle>🧐🤓{count} 페이지🧐🤓</PageTitle>
+      <PageTitle>🌱🌱 {count} 페이지 🌱🌱</PageTitle>
       <AnimalForm updateMainAnimal={updateMainAnimal} />
       <MainCard
         src={mainAnimal}
@@ -99,5 +85,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
