@@ -1,15 +1,13 @@
 {
   "files": {
-    "main.css": "/react-animal-app/static/css/main.ccd5d91e.css",
-    "main.js": "/react-animal-app/static/js/main.46dff0a5.js",
-    "static/js/453.3f58df06.chunk.js": "/react-animal-app/static/js/453.3f58df06.chunk.js",
+    "main.css": "/react-animal-app/static/css/main.51d1e5ec.css",
+    "main.js": "/react-animal-app/static/js/main.43bae23f.js",
     "index.html": "/react-animal-app/index.html",
-    "main.ccd5d91e.css.map": "/react-animal-app/static/css/main.ccd5d91e.css.map",
-    "main.46dff0a5.js.map": "/react-animal-app/static/js/main.46dff0a5.js.map",
-    "453.3f58df06.chunk.js.map": "/react-animal-app/static/js/453.3f58df06.chunk.js.map"
+    "main.51d1e5ec.css.map": "/react-animal-app/static/css/main.51d1e5ec.css.map",
+    "main.43bae23f.js.map": "/react-animal-app/static/js/main.43bae23f.js.map"
   },
   "entrypoints": [
-    "static/css/main.ccd5d91e.css",
-    "static/js/main.46dff0a5.js"
+    "static/css/main.51d1e5ec.css",
+    "static/js/main.43bae23f.js"
   ]
 }
